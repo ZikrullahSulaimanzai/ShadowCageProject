@@ -1,0 +1,290 @@
+
+/* =========================================
+   SHADOWSCAGE — AUTHENTICATION INTERFACE
+   Classified Access / Black / Silver / Red
+========================================= */
+
+.auth-page {
+  --auth-red: #94101d;
+  --auth-red-bright: #bd2635;
+  --auth-white: #ededed;
+  --auth-muted: #858585;
+  --auth-border: #292929;
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 45px 20px;
+  overflow: hidden;
+  color: var(--auth-white);
+  background:
+    radial-gradient(
+      ellipse at 50% 30%,
+      #241014 0%,
+      transparent 48%
+    ),
+    #050505;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Technical background grid */
+.auth-page::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(#ffffff09 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff09 1px, transparent 1px);
+  background-size: 45px 45px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+/* Subtle scanline effect */
+.auth-page::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.12;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    #ffffff0b 4px
+  );
+}
+
+/* Brand */
+.auth-page > .welcome-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 8px;
+  color: #ededed;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.auth-page > .welcome-logo svg {
+  color: var(--auth-red-bright);
+}
+
+.auth-page > .welcome-logo .accent {
+  color: var(--auth-red-bright);
+}
+
+/* Main authentication panel */
+.auth-panel {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin-top: 18px;
+  padding: 42px 38px;
+  border: 1px solid #343434;
+  background:
+    linear-gradient(145deg, #111111, #090909 75%);
+  box-shadow:
+    0 25px 80px #000c,
+    0 0 35px #94101d0a;
+}
+
+/* Top red indicator */
+.auth-panel::before {
+  position: absolute;
+  top: -1px;
+  left: 38px;
+  width: 65px;
+  height: 2px;
+  content: "";
+  background: var(--auth-red-bright);
+  box-shadow: 0 0 12px #94101d80;
+}
+
+/* Authentication icon */
+.auth-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 27px;
+  color: #d5d5d5;
+  border: 1px solid #494949;
+  background: #ffffff06;
+  box-shadow: inset 0 0 20px #ffffff05;
+}
+
+.auth-icon svg {
+  color: var(--auth-red-bright);
+}
+
+/* Labels and headings */
+.auth-kicker,
+.auth-security {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1.6px;
+}
+
+.auth-kicker {
+  color: #a9a9a9;
+}
+
+.auth-panel h1 {
+  margin: 16px 0 12px;
+  color: #f0f0f0;
+  font-size: clamp(26px, 6vw, 35px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+
+.auth-panel h1 span {
+  color: var(--auth-red-bright);
+}
+
+.auth-description {
+  margin-bottom: 30px;
+  color: #929292;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.auth-form label {
+  margin-top: 9px;
+  color: #bdbdbd;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+}
+
+.auth-form input {
+  width: 100%;
+  min-height: 49px;
+  padding: 13px 14px;
+  color: #eeeeee;
+  border: 1px solid #353535;
+  border-radius: 0;
+  outline: none;
+  background: #070707;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-form input::placeholder {
+  color: #626262;
+}
+
+.auth-form input:hover {
+  border-color: #555555;
+}
+
+.auth-form input:focus {
+  border-color: var(--auth-red);
+  box-shadow: 0 0 0 2px #94101d20;
+}
+
+/* Login button */
+.auth-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 49px;
+  margin-top: 17px;
+  color: #ffffff;
+  border: 1px solid var(--auth-red);
+  border-radius: 0;
+  background: linear-gradient(100deg, #650c16, #a71927);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.auth-form button:hover:not(:disabled) {
+  border-color: #d13a47;
+  background: linear-gradient(100deg, #83101d, #bd2635);
+  box-shadow: 0 0 22px #94101d35;
+}
+
+.auth-form button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.auth-form button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+/* Error message */
+.auth-error {
+  padding: 12px;
+  color: #ff929b;
+  border: 1px solid #70252d;
+  background: #1c0b0e;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* Account registration link */
+.auth-switch {
+  margin: 27px 0 0;
+  color: #929292;
+  font-size: 12px;
+  text-align: center;
+}
+
+.auth-switch a {
+  color: #d0d0d0;
+  text-decoration: none;
+  border-bottom: 1px solid #94101d;
+  transition: color 0.2s;
+}
+
+.auth-switch a:hover {
+  color: var(--auth-red-bright);
+}
+
+/* Security footer */
+.auth-security {
+  margin: 28px 0 0;
+  padding-top: 19px;
+  color: #686868;
+  border-top: 1px solid #292929;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .auth-page {
+    padding: 30px 16px;
+  }
+
+  .auth-panel {
+    padding: 32px 23px;
+  }
+
+  .auth-panel h1 {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,441 @@
+
+/* =====================================================
+   SHADOWSCAGE
+   RESTRICTED INTELLIGENCE NAVIGATION
+===================================================== */
+
+.navbar {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  min-height: 76px;
+  background: rgba(5, 5, 5, 0.97);
+  border-bottom: 1px solid #292929;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Top red classification line */
+
+.navbar::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #570a12 15%,
+    #8f101b 50%,
+    #570a12 85%,
+    transparent
+  );
+}
+
+.navbar-container {
+  width: min(100% - 48px, 1500px);
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-brand-icon {
+  position: relative;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #8f101b;
+  border: 1px solid #b51b29;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75%,
+    75% 100%,
+    0 100%
+  );
+}
+
+.navbar-brand-icon span {
+  font-family: var(--sc-font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navbar-logo {
+  color: #eeeeee;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+}
+
+.navbar-logo span {
+  color: #a31320;
+  margin: 0 2px;
+}
+
+.navbar-subtitle {
+  color: #686868;
+  font-family: var(--sc-font-mono);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+/* =====================================================
+   CLASSIFICATION INDICATOR
+===================================================== */
+
+.navbar-classification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #777777;
+  font-family: var(--sc-font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.classification-indicator {
+  width: 6px;
+  height: 6px;
+  background: #789b83;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(120, 155, 131, 0.4);
+}
+
+.classification-divider {
+  color: #3c3c3c;
+}
+
+.classification-level {
+  color: #a31320;
+  font-weight: 700;
+}
+
+/* =====================================================
+   ACCOUNT
+===================================================== */
+
+.navbar-account {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar-loading {
+  color: #777777;
+  font-family: var(--sc-font-mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   AUTHENTICATED USER
+===================================================== */
+
+.nav-user-panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 25px;
+}
+
+.nav-user-info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.nav-status-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  background: #789b83;
+  border-radius: 50%;
+  box-shadow: 0 0 7px rgba(120, 155, 131, 0.4);
+}
+
+.nav-user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-user-label {
+  color: #686868;
+  font-family: var(--sc-font-mono);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.nav-username {
+  color: #eeeeee;
+  font-family: var(--sc-font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-admin-badge {
+  padding: 4px 6px;
+  color: #e4a2a6;
+  background: rgba(143, 16, 27, 0.15);
+  border: 1px solid rgba(143, 16, 27, 0.45);
+  font-family: var(--sc-font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   USER ACTIONS
+===================================================== */
+
+.nav-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 8px 0;
+  color: #999999;
+  font-family: var(--sc-font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+}
+
+.nav-link-marker {
+  color: #8f101b;
+  margin-right: 4px;
+  font-weight: 700;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover .nav-link-marker {
+  color: #d52234;
+}
+
+.nav-logout-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 0 11px;
+  color: #c07c81;
+  background: rgba(143, 16, 27, 0.08);
+  border: 1px solid rgba(143, 16, 27, 0.35);
+  border-radius: 2px;
+  font-family: var(--sc-font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+}
+
+.nav-logout-button:hover {
+  color: #ffffff;
+  background: #570a12;
+  border-color: #a31320;
+}
+
+.nav-logout-button span {
+  font-size: 13px;
+}
+
+/* =====================================================
+   GUEST ACTIONS
+===================================================== */
+
+.nav-guest-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-login,
+.nav-register {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 13px;
+  font-family: var(--sc-font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+}
+
+.nav-login {
+  color: #aaaaaa;
+  background: transparent;
+  border: 1px solid #333333;
+}
+
+.nav-login:hover {
+  color: #ffffff;
+  background: #151515;
+  border-color: #666666;
+}
+
+.nav-register {
+  color: #ffffff;
+  background: #8f101b;
+  border: 1px solid #8f101b;
+}
+
+.nav-register:hover {
+  background: #570a12;
+  border-color: #b51b29;
+  box-shadow: 0 0 15px rgba(143, 16, 27, 0.18);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+  .navbar-container {
+    width: calc(100% - 32px);
+    gap: 15px;
+  }
+
+  .navbar-classification {
+    display: none;
+  }
+
+  .nav-user-panel {
+    gap: 16px;
+  }
+
+  .nav-user-actions {
+    gap: 12px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+  .navbar {
+    min-height: auto;
+  }
+
+  .navbar-container {
+    width: calc(100% - 28px);
+    min-height: auto;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px 0;
+  }
+
+  .navbar-brand-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .navbar-logo {
+    font-size: 16px;
+  }
+
+  .navbar-subtitle {
+    font-size: 7px;
+  }
+
+  .navbar-account {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 11px;
+    border-top: 1px solid #242424;
+  }
+
+  .nav-user-panel {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 13px;
+  }
+
+  .nav-user-info {
+    gap: 7px;
+  }
+
+  .nav-user-actions {
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+
+  .nav-link {
+    font-size: 9px;
+  }
+
+  .nav-logout-button {
+    min-height: 31px;
+    font-size: 8px;
+  }
+
+  .nav-guest-actions {
+    width: 100%;
+  }
+
+  .nav-login,
+  .nav-register {
+    flex: 1;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-user-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-user-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-admin-badge {
+    font-size: 7px;
+  }
+}

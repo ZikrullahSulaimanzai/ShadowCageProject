@@ -1,0 +1,347 @@
+
+/* =====================================================
+   SHADOWSCAGE
+   SHARED GLOBAL COMPONENTS
+===================================================== */
+
+/* =====================================================
+   GLOBAL LINKS
+===================================================== */
+
+a {
+  color: var(--sc-silver);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--sc-white);
+}
+
+/* =====================================================
+   TECHNICAL LABELS
+===================================================== */
+
+.sc-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sc-muted);
+  font-family: var(--sc-font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.sc-label::before {
+  width: 6px;
+  height: 6px;
+  content: "";
+  background: var(--sc-red);
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--sc-muted);
+  font-family: var(--sc-font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.loading::before {
+  width: 20px;
+  height: 20px;
+  content: "";
+  border: 2px solid #292929;
+  border-top-color: var(--sc-red-bright);
+  border-radius: 50%;
+  animation: sc-loading-spin 0.8s linear infinite;
+}
+
+@keyframes sc-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.error-message {
+  position: relative;
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 25px;
+  color: #d5a2a6;
+  background: #100809;
+  border: 1px solid var(--sc-border-red);
+  border-left: 3px solid var(--sc-red);
+  text-align: left;
+  font-family: var(--sc-font-mono);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.error-message::before {
+  display: block;
+  margin-bottom: 10px;
+  content: "SYSTEM ERROR // ACCESS INTERRUPTED";
+  color: var(--sc-red-bright);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-state {
+  position: relative;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 45px 20px;
+  overflow: hidden;
+  color: var(--sc-muted);
+  background: rgba(12, 12, 12, 0.85);
+  border: 1px dashed var(--sc-border-strong);
+  text-align: center;
+}
+
+.empty-state::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 2px;
+  content: "";
+  background: var(--sc-red);
+}
+
+.empty-state h2,
+.empty-state h3,
+.empty-state h4 {
+  color: var(--sc-white);
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+
+.empty-state p {
+  max-width: 460px;
+  color: var(--sc-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =====================================================
+   NOT FOUND
+===================================================== */
+
+.not-found {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.not-found h1 {
+  color: var(--sc-white);
+  font-family: var(--sc-font-mono);
+  font-size: clamp(70px, 14vw, 130px);
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 5px 5px 0 rgba(143, 16, 27, 0.5);
+}
+
+.not-found h2 {
+  color: var(--sc-white);
+  font-family: var(--sc-font-mono);
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.not-found p {
+  max-width: 440px;
+  color: var(--sc-muted);
+  font-size: 12px;
+}
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.sc-button {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 19px;
+  color: #ffffff;
+  background: var(--sc-red);
+  border: 1px solid var(--sc-red);
+  border-radius: var(--sc-radius-sm);
+  font-family: var(--sc-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sc-button:hover {
+  background: var(--sc-red-dark);
+  border-color: var(--sc-red-bright);
+  box-shadow: var(--sc-shadow-red);
+}
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.sc-button-secondary {
+  color: var(--sc-silver);
+  background: #101010;
+  border: 1px solid var(--sc-border-strong);
+  border-radius: var(--sc-radius-sm);
+  font-family: var(--sc-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.sc-button-secondary:hover {
+  color: #ffffff;
+  background: #191919;
+  border-color: #666666;
+}
+
+/* =====================================================
+   SHARED PANELS
+===================================================== */
+
+.sc-panel {
+  position: relative;
+  background: var(--sc-panel);
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius-md);
+  box-shadow: var(--sc-shadow);
+}
+
+.sc-panel:hover {
+  border-color: var(--sc-border-strong);
+}
+
+/* =====================================================
+   SHARED SECTION HEADER
+===================================================== */
+
+.sc-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--sc-border);
+}
+
+.sc-section-header h2 {
+  color: var(--sc-white);
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.sc-section-header span {
+  color: var(--sc-muted);
+  font-family: var(--sc-font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* =====================================================
+   SHARED FORM ELEMENTS
+===================================================== */
+
+input,
+textarea,
+select {
+  width: 100%;
+  color: var(--sc-white);
+  background: #090909;
+  border: 1px solid #303030;
+  border-radius: var(--sc-radius-sm);
+  font-family: var(--sc-font-main);
+  transition:
+    border-color var(--sc-transition),
+    box-shadow var(--sc-transition);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #606060;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--sc-red);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(143, 16, 27, 0.15);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  .sc-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .error-message {
+    margin: 45px 15px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .empty-state {
+    min-height: 190px;
+    padding: 35px 15px;
+  }
+
+  .not-found h2 {
+    font-size: 12px;
+  }
+
+  .sc-button {
+    min-height: 40px;
+    padding: 0 14px;
+  }
+}

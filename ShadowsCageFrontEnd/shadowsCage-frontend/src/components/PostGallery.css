@@ -1,0 +1,104 @@
+
+/* =========================================
+   SHADOWS/CAGE — INTELLIGENCE IMAGE ARCHIVE
+========================================= */
+
+.post-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin: 28px 0;
+}
+
+.post-gallery-item {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  overflow: hidden;
+  background: #0a0c0f;
+  border: 1px solid #292d33;
+  transition: border-color 0.25s ease;
+}
+
+.post-gallery-item::before {
+  content: "ARCHIVE IMAGE";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+  padding: 5px 8px;
+  background: rgba(5, 6, 8, 0.85);
+  border-left: 2px solid #8f101b;
+  color: #c0c3c9;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.post-gallery-item:hover {
+  border-color: #8f101b;
+}
+
+.post-gallery-item .post-image {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  background: #050608;
+  filter: saturate(0.8) contrast(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.post-gallery-item:hover .post-image {
+  filter: saturate(1) contrast(1.08);
+}
+
+.post-gallery-item figcaption {
+  padding: 12px 8px 6px;
+  border-top: 1px solid #252a30;
+  margin-top: 8px;
+  color: #9299a3;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Single image */
+
+.post-gallery:has(.post-gallery-item:only-child) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.post-gallery-item:only-child .post-image {
+  height: auto;
+  max-height: 550px;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .post-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .post-gallery-item .post-image {
+    height: auto;
+    max-height: 420px;
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 400px) {
+  .post-gallery-item {
+    padding: 5px;
+  }
+
+  .post-gallery-item figcaption {
+    font-size: 10px;
+  }
+}

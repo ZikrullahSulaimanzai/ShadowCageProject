@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.SCenv/
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+
+# Database
+*.sqlite3
+
+# User uploads and generated files
+media/
+staticfiles/
+
+# Backups
+backups/
+
+# IDE
+.vscode/
+.idea/
+
+# files
+Dont_share.txt
+

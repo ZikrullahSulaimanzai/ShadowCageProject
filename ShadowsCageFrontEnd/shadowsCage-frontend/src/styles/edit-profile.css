@@ -1,0 +1,423 @@
+
+/* =========================================
+   SHADOWSCAGE — CLASSIFIED PROFILE EDITOR
+========================================= */
+
+.edit-profile-page {
+  min-height: calc(100vh - 70px);
+  padding: 60px 20px;
+  color: var(--sc-text, #e8e9ed);
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(143, 16, 27, 0.10),
+      transparent 48%
+    ),
+    var(--sc-bg, #080a0e);
+}
+
+.edit-profile-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.edit-profile-header {
+  margin-bottom: 30px;
+}
+
+.edit-profile-overline {
+  color: var(--sc-red-bright, #b51b29);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.edit-profile-header h1 {
+  margin: 14px 0 10px;
+  color: #f1f2f4;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.edit-profile-header p {
+  margin: 0;
+  color: #9299a4;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* FORM PANEL */
+
+.edit-profile-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      transparent 45%
+    ),
+    var(--sc-panel, #101319);
+  border: 1px solid #292d35;
+  border-radius: 3px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.4);
+}
+
+.edit-profile-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 2px;
+  background: var(--sc-red, #8f101b);
+  content: "";
+}
+
+.edit-profile-card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  border-top: 1px solid rgba(181, 27, 41, 0.4);
+  border-right: 1px solid rgba(181, 27, 41, 0.4);
+  content: "";
+  pointer-events: none;
+}
+
+/* AVATAR */
+
+.edit-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.edit-avatar {
+  display: flex;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #f2f2f2;
+  background: linear-gradient(145deg, #242832, #11141a);
+  border: 1px solid #71303a;
+  border-radius: 3px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.edit-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-avatar-controls {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.edit-avatar-label {
+  color: #e0b9bd;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.edit-avatar-label:hover {
+  color: #ffffff;
+}
+
+.edit-avatar-controls input {
+  max-width: 100%;
+  color: #c2c6ce;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+
+.edit-avatar-controls input::file-selector-button {
+  padding: 8px 12px;
+  margin-right: 10px;
+  color: #d9dce2;
+  background: #1b1e25;
+  border: 1px solid #424752;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.edit-avatar-controls input::file-selector-button:hover {
+  background: #292d36;
+  border-color: #777e89;
+}
+
+.edit-avatar-controls span {
+  color: #858b96;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* DIVIDERS */
+
+.edit-profile-divider {
+  height: 1px;
+  margin: 28px 0;
+  background: linear-gradient(
+    90deg,
+    #39343a,
+    #272b33 70%,
+    transparent
+  );
+}
+
+/* FORM FIELDS */
+
+.edit-profile-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.edit-profile-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-profile-field label {
+  color: #858b96;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.edit-profile-field input,
+.edit-profile-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px;
+  color: #e5e7eb;
+  background: #090c11;
+  border: 1px solid #343943;
+  border-radius: 2px;
+  outline: none;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.edit-profile-field input:hover,
+.edit-profile-field textarea:hover {
+  border-color: #555c68;
+}
+
+.edit-profile-field input:focus,
+.edit-profile-field textarea:focus {
+  background: #0d1016;
+  border-color: #96323d;
+  box-shadow: 0 0 0 2px rgba(143, 16, 27, 0.13);
+}
+
+.edit-profile-field textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.8;
+}
+
+.edit-profile-field input::placeholder,
+.edit-profile-field textarea::placeholder {
+  color: #646b76;
+}
+
+.edit-profile-bio {
+  grid-column: 1 / -1;
+}
+
+.edit-profile-character-count {
+  align-self: flex-end;
+  color: #737a85;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+}
+
+/* ALERTS */
+
+.edit-profile-alert {
+  margin-top: 22px;
+  padding: 13px 15px;
+  border: 1px solid;
+  border-radius: 2px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.edit-profile-error {
+  color: #ed929a;
+  border-color: #71303a;
+  background: rgba(143, 16, 27, 0.12);
+}
+
+.edit-profile-success {
+  color: #d1d4da;
+  border-color: #454b56;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+/* ACTION BUTTONS */
+
+.edit-profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.edit-profile-cancel,
+.edit-profile-save {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 1px solid;
+  border-radius: 2px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.edit-profile-cancel {
+  color: #c2c6ce;
+  background: transparent;
+  border-color: #414651;
+}
+
+.edit-profile-cancel:hover {
+  color: #ffffff;
+  background: #1b1e25;
+  border-color: #777e89;
+}
+
+.edit-profile-save {
+  color: #ffffff;
+  background: #741923;
+  border-color: #96303c;
+  font-weight: 700;
+}
+
+.edit-profile-save:hover {
+  background: #92212d;
+  border-color: #bd3b47;
+}
+
+.edit-profile-save:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* LOADING MESSAGE */
+
+.edit-profile-message {
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 25px;
+  color: #c3c6cd;
+  background: #101319;
+  border: 1px solid #292d35;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* FOOTER */
+
+.edit-profile-footer {
+  margin-top: 25px;
+  color: #666d78;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  .edit-profile-page {
+    padding: 40px 15px;
+  }
+
+  .edit-profile-card {
+    padding: 22px 18px;
+  }
+
+  .edit-profile-header h1 {
+    font-size: 26px;
+  }
+
+  .edit-profile-fields {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .edit-profile-bio {
+    grid-column: auto;
+  }
+
+  .edit-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+  }
+
+  .edit-avatar-section {
+    gap: 15px;
+  }
+
+  .edit-profile-actions {
+    flex-direction: column-reverse;
+  }
+
+  .edit-profile-cancel,
+  .edit-profile-save {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 360px) {
+  .edit-profile-card {
+    padding: 18px 14px;
+  }
+
+  .edit-avatar-section {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

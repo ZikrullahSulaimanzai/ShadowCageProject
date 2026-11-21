@@ -1,0 +1,202 @@
+
+/* =========================================
+   SHADOWS/CAGE — CONTENT REPORT SYSTEM
+========================================= */
+
+.report-wrapper {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.report-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid #393238;
+  background: #100d10;
+  color: #a5a0a4;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.report-trigger:hover {
+  border-color: #8f101b;
+  background: #1a0c0f;
+  color: #d64b56;
+}
+
+.report-form {
+  width: min(100%, 380px);
+  margin-top: 12px;
+  padding: 20px;
+  border: 1px solid #393238;
+  border-top: 2px solid #8f101b;
+  background: #0b0d10;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+}
+
+.report-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #292d33;
+}
+
+.report-form-header strong {
+  color: #e5e5e5;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.report-form-header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #858b94;
+  cursor: pointer;
+}
+
+.report-form-header button:hover {
+  border-color: #8f101b;
+  color: #d64b56;
+}
+
+.report-form label {
+  display: block;
+  margin: 15px 0 8px;
+  color: #aeb4bd;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.report-form select,
+.report-form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #30353d;
+  border-radius: 0;
+  outline: none;
+  background: #07090c;
+  color: #e5e7eb;
+  font: inherit;
+  font-size: 13px;
+}
+
+.report-form select:focus,
+.report-form textarea:focus {
+  border-color: #8f101b;
+  box-shadow: 0 0 0 1px rgba(143, 16, 27, 0.2);
+}
+
+.report-form select option {
+  background: #0b0d10;
+  color: #e5e7eb;
+}
+
+.report-form textarea {
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.report-form textarea::placeholder {
+  color: #626a75;
+}
+
+.report-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.report-form-actions button {
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid #343941;
+  background: transparent;
+  color: #aeb4bd;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.report-form-actions button:first-child:hover {
+  border-color: #747b85;
+  color: #fff;
+}
+
+.report-form-actions button:last-child {
+  border-color: #8f101b;
+  background: #8f101b;
+  color: #fff;
+}
+
+.report-form-actions button:last-child:hover {
+  border-color: #b51b29;
+  background: #b51b29;
+}
+
+.report-form-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.report-error {
+  margin: 12px 0 0;
+  padding: 10px;
+  border-left: 2px solid #a51a25;
+  background: #190d10;
+  color: #e58b92;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.report-success {
+  margin: 0;
+  padding: 8px 11px;
+  border-left: 2px solid #777f89;
+  background: #111419;
+  color: #c4c9d0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .report-form {
+    width: min(85vw, 380px);
+    padding: 15px;
+  }
+
+  .report-form-actions {
+    justify-content: stretch;
+  }
+
+  .report-form-actions button {
+    flex: 1;
+  }
+}

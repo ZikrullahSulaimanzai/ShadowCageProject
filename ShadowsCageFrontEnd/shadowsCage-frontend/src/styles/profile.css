@@ -1,0 +1,365 @@
+
+/* =========================================
+   SHADOWSCAGE — CLASSIFIED USER PROFILE
+========================================= */
+
+.profile-page {
+  min-height: calc(100vh - 70px);
+  padding: 65px 20px;
+  color: var(--sc-text, #e8e9ed);
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(143, 16, 27, 0.10),
+      transparent 48%
+    ),
+    var(--sc-bg, #080a0e);
+}
+
+.profile-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.profile-header {
+  margin-bottom: 32px;
+}
+
+.profile-overline {
+  display: inline-block;
+  color: var(--sc-red-bright, #b51b29);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.profile-header h1 {
+  margin: 14px 0 10px;
+  color: #f1f2f4;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.profile-header p {
+  margin: 0;
+  color: #9299a4;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* MAIN PROFILE PANEL */
+
+.profile-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      transparent 45%
+    ),
+    var(--sc-panel, #101319);
+  border: 1px solid #292d35;
+  border-radius: 3px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.4);
+}
+
+.profile-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 2px;
+  background: var(--sc-red, #8f101b);
+  content: "";
+}
+
+.profile-card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  border-top: 1px solid rgba(181, 27, 41, 0.4);
+  border-right: 1px solid rgba(181, 27, 41, 0.4);
+  content: "";
+  pointer-events: none;
+}
+
+/* IDENTITY */
+
+.profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.profile-avatar {
+  display: flex;
+  width: 78px;
+  height: 78px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #f2f2f2;
+  background:
+    linear-gradient(145deg, #242832, #11141a);
+  border: 1px solid #71303a;
+  border-radius: 3px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-identity-info {
+  min-width: 0;
+}
+
+.profile-identity-info h2 {
+  margin: 0 0 11px;
+  color: #f0f1f3;
+  font-size: 22px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.profile-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #c2c5cb;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+.profile-status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: #aeb4bd;
+  border-radius: 50%;
+  box-shadow: 0 0 7px rgba(174, 180, 189, 0.35);
+}
+
+/* DIVIDERS */
+
+.profile-divider {
+  height: 1px;
+  margin: 28px 0;
+  background: linear-gradient(
+    90deg,
+    #39343a,
+    #272b33 70%,
+    transparent
+  );
+}
+
+/* ACCOUNT INFORMATION */
+
+.profile-information {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 27px 35px;
+}
+
+.profile-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-field-label {
+  color: #858b96;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.profile-field-value {
+  color: #e2e4e8;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.profile-role {
+  width: fit-content;
+  color: #c3c6cd;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.profile-role-admin {
+  color: #d45a64;
+}
+
+.profile-authenticated {
+  color: #d45a64;
+}
+
+/* BIOGRAPHY */
+
+.profile-bio-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-bio-section p {
+  margin: 0;
+  color: #c0c4cc;
+  font-size: 13px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+/* ACTIONS */
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.profile-action-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 17px;
+  color: #d9dce2;
+  background: #171a21;
+  border: 1px solid #393e48;
+  border-radius: 2px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.profile-action-button:hover {
+  color: #ffffff;
+  background: #242831;
+  border-color: #777e89;
+}
+
+.profile-back-button {
+  color: #c3c6cd;
+  background: transparent;
+}
+
+.profile-back-button:hover {
+  color: #ffffff;
+  background: #1a1d24;
+}
+
+.profile-edit-button {
+  color: #e0b9bd;
+  background: rgba(143, 16, 27, 0.12);
+  border-color: #71303a;
+}
+
+.profile-edit-button:hover {
+  color: #ffffff;
+  background: rgba(143, 16, 27, 0.25);
+  border-color: #a52b38;
+}
+
+/* LOADING / ERROR MESSAGE */
+
+.profile-message {
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 30px;
+  color: #c3c6cd;
+  background: #101319;
+  border: 1px solid #292d35;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* FOOTER */
+
+.profile-footer {
+  margin-top: 25px;
+  color: #666d78;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  .profile-page {
+    padding: 40px 15px;
+  }
+
+  .profile-card {
+    padding: 22px 18px;
+  }
+
+  .profile-header h1 {
+    font-size: 26px;
+  }
+
+  .profile-information {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .profile-identity {
+    gap: 15px;
+  }
+
+  .profile-avatar {
+    width: 62px;
+    height: 62px;
+    font-size: 24px;
+  }
+
+  .profile-identity-info h2 {
+    font-size: 18px;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+  }
+
+  .profile-action-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .profile-card {
+    padding: 18px 14px;
+  }
+
+  .profile-status {
+    font-size: 9px;
+  }
+}

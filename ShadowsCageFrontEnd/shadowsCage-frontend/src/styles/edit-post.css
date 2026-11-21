@@ -1,0 +1,478 @@
+
+/* =========================================
+   SHADOWSCAGE — EDIT POST
+   CLASSIFIED INTELLIGENCE RECORD EDITOR
+========================================= */
+
+.edit-post-page {
+  min-height: calc(100vh - 70px);
+  padding: 50px 7% 90px;
+  color: var(--sc-text, #e8e8e8);
+  background: var(--sc-bg, #080808);
+  position: relative;
+}
+
+/* HEADER */
+
+.edit-post-header {
+  max-width: 1050px;
+  margin: 0 auto 38px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  border-bottom: 1px solid #292929;
+  position: relative;
+}
+
+.edit-post-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 115px;
+  height: 2px;
+  background: var(--sc-red, #8f101b);
+}
+
+.edit-post-eyebrow {
+  margin: 0 0 13px;
+  color: #a52b35;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.edit-post-header h1 {
+  margin: 0 0 10px;
+  color: #f1f1f1;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.edit-post-header > div > p:last-child {
+  margin: 0;
+  color: #858585;
+  font-size: 0.88rem;
+}
+
+/* NAVIGATION BUTTONS */
+
+.edit-post-back,
+.edit-post-cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 16px;
+  color: #c8c8c8;
+  background: #111;
+  border: 1px solid #383838;
+  border-radius: 2px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.edit-post-back:hover,
+.edit-post-cancel:hover {
+  color: #fff;
+  background: #211114;
+  border-color: #8f101b;
+}
+
+/* MAIN FORM */
+
+.edit-post-form {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 32px;
+  background:
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    #0c0c0d;
+  background-size: 100% 28px;
+  border: 1px solid #292929;
+  border-radius: 2px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.edit-post-form::before {
+  content: "RECORD MODIFICATION / AUTHORIZED PERSONNEL ONLY";
+  display: block;
+  margin-bottom: 30px;
+  padding-bottom: 13px;
+  color: #777;
+  border-bottom: 1px solid #292929;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 1.6px;
+}
+
+/* FORM FIELDS */
+
+.edit-post-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.edit-post-field label {
+  color: #d7d7d7;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.edit-post-field input,
+.edit-post-field textarea,
+.edit-post-field select,
+.edit-post-new-image input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px 15px;
+  color: #e7e7e7;
+  background: #080808;
+  border: 1px solid #353535;
+  border-radius: 2px;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.edit-post-field input::placeholder,
+.edit-post-field textarea::placeholder,
+.edit-post-new-image input::placeholder {
+  color: #555;
+}
+
+.edit-post-field input:focus,
+.edit-post-field textarea:focus,
+.edit-post-field select:focus,
+.edit-post-new-image input:focus {
+  border-color: #8f101b;
+  background: #0e0b0c;
+  box-shadow: 0 0 0 2px rgba(143, 16, 27, 0.08);
+}
+
+.edit-post-field textarea {
+  min-height: 280px;
+  resize: vertical;
+  line-height: 1.8;
+  font-size: 0.94rem;
+}
+
+.edit-post-field select {
+  cursor: pointer;
+}
+
+.edit-post-field select option {
+  color: #eee;
+  background: #111;
+}
+
+.edit-post-field small,
+.edit-post-new-image small {
+  color: #777;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+}
+
+/* FILE UPLOAD */
+
+.edit-post-field input[type="file"] {
+  padding: 12px;
+  color: #999;
+  cursor: pointer;
+}
+
+.edit-post-field input[type="file"]::file-selector-button {
+  margin-right: 15px;
+  padding: 9px 13px;
+  color: #ddd;
+  background: #1b1b1b;
+  border: 1px solid #454545;
+  border-radius: 2px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.edit-post-field input[type="file"]::file-selector-button:hover {
+  color: white;
+  background: #351317;
+  border-color: #8f101b;
+}
+
+/* EXISTING IMAGE ARCHIVE */
+
+.edit-post-images {
+  margin: 32px 0;
+  padding: 23px;
+  background: #090909;
+  border: 1px solid #303030;
+  border-left: 2px solid #777;
+}
+
+.edit-post-images h2 {
+  margin: 0 0 20px;
+  color: #e5e5e5;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.edit-post-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.edit-post-image-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #101010;
+  border: 1px solid #353535;
+  border-radius: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.edit-post-image-card:hover {
+  border-color: #777;
+}
+
+.edit-post-image-card img {
+  display: block;
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  background: #050505;
+  filter: grayscale(35%) contrast(1.05);
+  transition: filter 0.25s ease;
+}
+
+.edit-post-image-card:hover img {
+  filter: grayscale(0%) contrast(1.05);
+}
+
+.edit-post-image-card p {
+  min-height: 20px;
+  padding: 12px;
+  margin: 0;
+  color: #aaa;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  overflow-wrap: anywhere;
+}
+
+.edit-post-muted {
+  margin: 15px 0;
+  color: #777;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+/* NEW IMAGE ATTACHMENTS */
+
+.edit-post-new-images {
+  margin: 32px 0;
+  padding: 22px;
+  background: #090909;
+  border: 1px solid #303030;
+  border-left: 2px solid #8f101b;
+}
+
+.edit-post-new-images h2 {
+  margin: 0 0 20px;
+  color: #e5e5e5;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.edit-post-new-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 20px;
+  padding: 17px 0;
+  border-top: 1px solid #292929;
+}
+
+.edit-post-new-image > div {
+  min-width: 0;
+}
+
+.edit-post-new-image strong {
+  display: block;
+  color: #d5d5d5;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+  overflow-wrap: anywhere;
+}
+
+.edit-post-new-image small {
+  display: block;
+  margin-top: 7px;
+}
+
+.edit-post-new-image input {
+  min-width: 0;
+  padding: 11px 12px;
+  font-size: 0.82rem;
+}
+
+/* ERROR */
+
+.edit-post-error {
+  max-width: 1050px;
+  margin: 0 auto 24px;
+  padding: 15px 17px;
+  color: #efb1b6;
+  background: #1c1012;
+  border: 1px solid #64252c;
+  border-left: 3px solid #a51b28;
+  border-radius: 2px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* LOADING */
+
+.edit-post-message {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 65px 15px;
+  color: #999;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ACTIONS */
+
+.edit-post-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #303030;
+}
+
+.edit-post-actions button {
+  min-height: 42px;
+  padding: 12px 23px;
+  color: #fff;
+  background: #761923;
+  border: 1px solid #a52b35;
+  border-radius: 2px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.edit-post-actions button:hover {
+  background: #971f2b;
+  border-color: #c43b47;
+  box-shadow: 0 0 18px rgba(143, 16, 27, 0.16);
+}
+
+.edit-post-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.edit-post-actions button:focus-visible,
+.edit-post-back:focus-visible,
+.edit-post-cancel:focus-visible {
+  outline: 2px solid #a52b35;
+  outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .edit-post-page {
+    padding: 35px 5% 65px;
+  }
+
+  .edit-post-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .edit-post-form {
+    padding: 22px 18px;
+  }
+
+  .edit-post-new-image {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .edit-post-actions {
+    justify-content: stretch;
+  }
+
+  .edit-post-actions button,
+  .edit-post-actions .edit-post-cancel {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .edit-post-form {
+    padding: 18px 14px;
+  }
+
+  .edit-post-images,
+  .edit-post-new-images {
+    padding: 16px 12px;
+  }
+
+  .edit-post-image-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .edit-post-image-card img {
+    height: 115px;
+  }
+
+  .edit-post-actions {
+    flex-direction: column-reverse;
+  }
+
+  .edit-post-actions button,
+  .edit-post-actions .edit-post-cancel {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
